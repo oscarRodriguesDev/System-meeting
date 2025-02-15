@@ -1,21 +1,13 @@
-
-import type { Metadata } from "next";
+import Provider from "./components/sessionProvider";
 import "./globals.css";
 
-export const metadata: Metadata = {
-  title: "Te Vi Ali ",
-  description: "Aplicação em desenvolvimento",
-};
-
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="pt-br">
+    <html lang="pt-BR">
       <body>
-        {children}
+        <Provider>
+          {children}
+        </Provider>
       </body>
     </html>
   );
